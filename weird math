@@ -1,0 +1,64 @@
+#include <stdio.h>
+
+int vcalc(int a){ //gets first digit of a;
+    int v=0;
+    while (a>0){
+        v=a;
+        a=a/10;
+    }
+return v;
+}
+
+int juicer(int a){ //takes off last digit of a number by reversing it
+                   //then taking off the first and reversing it back
+int b=a/10;
+int dig;
+int res=0;
+int res2=0;
+    while(b>0){
+        dig=b%10;
+        if(dig==0){
+            res2=0;
+            res=0;
+            break;
+        }
+        else{
+        res=res*10+dig;
+        b=b/10;
+        }
+    }
+res=res/10;
+    while(res>0){
+        dig=res%10;
+        res2=res2*10+dig;
+        res=res/10;
+    }
+    return res2;
+}
+
+int OMEGAJUICER(int a){ //product of middle digits
+    int b=1;
+    a=juicer(a);
+        while(a>0){
+            b*=(a%10);
+            a=a/10;
+        }
+        return b;
+}
+
+int main(){
+int a,b;
+int dawg=0;
+int total=0;
+scanf("%d%d",&a,&b);
+while (a<=b){
+a++;
+dawg=(vcalc(a))*10+a%10; //first and last digit of a
+
+if(OMEGAJUICER(a)%(dawg)==0&&OMEGAJUICER(a)!=0){
+    printf("%d -> (%d == %d * %d)\n",a,OMEGAJUICER(a),dawg,(OMEGAJUICER(a)/dawg));
+    total++;
+}
+}
+printf("%d",total); 
+}
