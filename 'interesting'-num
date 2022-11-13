@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <math.h>
+
+
+int reverse(int a){
+int result=0;
+int dig;
+while (a>0){
+    dig=a%10;
+    result=result*10+dig;
+    a=a/10;
+}
+return result;
+}
+int size(int a){
+int b=0;
+while (a>0){
+    a=a/10;
+    b++;
+}
+return b;
+}
+
+int main(){
+int num;
+scanf("%d",&num);
+
+if(num<=9){
+    printf("The number is invalid");
+}
+else{
+for (int i=num;i>0;i--){
+    int q=size(i);
+    int z=size(reverse(i)+0);
+if((reverse(i)+0)%q==0&&q==z){ //+0??
+    printf("%d\n",i);
+    break;
+}
+}
+}
+}
