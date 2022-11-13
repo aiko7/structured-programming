@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+
+int n;
+int sum=0;
+int max = 0;
+int idk;
+scanf("%d",&n);
+for(int p=(n-1);p>0;p--){
+    for (int j=p-1;j>0;j--){
+        if (p%j==0)
+        {sum+=j;}
+    }
+
+    if(sum>max){
+    max=sum;
+    idk=p;
+    }
+    sum=0;
+}
+
+printf("%d",idk);
+//printf("%d",max);
+}
