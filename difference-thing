@@ -1,0 +1,87 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main(){
+int x,y,z;
+while(scanf("%d %d %d",&x,&y,&z)){
+    if(x==y||y==x){
+        printf("%d %d\n",x,y);
+    }
+    else if(y==z||z==y){
+        printf("%d %d\n",y,z);
+    }
+    else if(x==z||z==x){
+        printf("%d %d\n",x,z);
+    }
+    else if ((abs(x-y)==abs(y-z))||(abs(x-y)==abs(x-z))||(abs(y-z)==abs(x-z))){
+        if(x>y&&x>z){
+            if(y>z){
+            printf("%d %d %d\n",z,y,x);}
+            else{
+                printf("%d %d %d\n",y,z,x);
+            }
+        }
+        else if(x>z&&x>y){
+            if(z>y){
+            printf("%d %d %d\n",y,z,x);}
+            else{
+                printf("%d %d %d\n",z,y,x);
+            }
+        }
+        else if(y>x&&y>z){
+            if(x>z){
+            printf("%d %d %d\n",z,x,y);}
+            else{
+                printf("%d %d %d\n",x,z,y);
+            }
+        }
+        else if(y>z&&y>x){
+            if(z>x){
+            printf("%d %d %d\n",x,z,y);}
+            else{
+                printf("%d %d %d\n",z,x,y);
+            }
+        }
+        else if(z>y&&z>x){
+            if(y>x){
+            printf("%d %d %d\n",x,y,z);}
+            else{
+                printf("%d %d %d\n",y,x,z);
+            }
+        }
+        else if(z>x&&z>y){
+            if(x>y){
+            printf("%d %d %d\n",y,x,z);}
+            else{
+                printf("%d %d %d\n",x,y,z);
+            }
+        }
+
+
+    } 
+    else if((abs(x-y))<(abs(y-z))&&(abs(x-y)<(abs(z-x)))){
+        if(x<y){
+            printf("%d %d\n",x,y);}
+        else{
+            printf("%d %d\n",y,x);
+        }
+    }
+
+    else if((abs(y-z))<(abs(x-y))&&(abs(y-z)<(abs(z-x)))){
+        if(y<z){
+            printf("%d %d\n",y,z);}
+        else{
+            printf("%d %d\n",z,y);
+        }
+    }
+
+    else if((abs(z-x))<(abs(x-y))&&(abs(z-x)<(abs(y-z)))){
+        if(z<x){
+            printf("%d %d\n",z,x);}
+        else{
+            printf("%d %d\n",x,z);
+        }
+    }
+
+}
+
+}
