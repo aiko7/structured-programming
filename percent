@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main(){
+int x,y;
+int z;
+float count=0;
+float count2=0;
+scanf("%d",&z);
+while (1){
+    scanf("%d %d",&x,&y);
+    if(x+y==0&&x*y==0){
+        break;
+    }
+
+    
+    else if(x+y==z){
+        count++;
+
+    }
+    count2++;
+}
+printf("You entered %.f pair of numbers whose sum is %d\nThe percentage of pairs with sum %d is %.2f%%",count,z,z,(100*count/count2));
+
+}
