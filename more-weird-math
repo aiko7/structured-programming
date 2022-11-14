@@ -1,0 +1,54 @@
+#include <stdio.h>
+#include <math.h>
+
+int first(int a){
+int digit=0;
+while (a>0){
+    digit=a%10;
+    a=a/10;
+}
+return digit;
+}
+
+int reverse(int a){
+int c=0;
+int result=0;
+while (a>0){
+    c=a%10;
+    result=result*10+c;
+    a=a/10;
+}
+return result;
+}
+
+int last(int a){
+    int c=reverse(a)%10;
+    return c;
+}
+
+int middle(int a){
+    int d=(reverse((a/10))/10);
+return d;
+}
+
+int main(){
+
+int a,b;
+int counter =0;
+scanf("%d%d",&a,&b);
+
+while (a<b){
+
+int sumof = first(a)+a%10;
+int middledig=middle(a);
+
+if(middledig%sumof==0&&middledig!=0){
+printf("%d -> (%d == (%d + %d) * %d)\n",a,middledig,a%10,first(a),(middledig)/sumof);
+counter++;
+}
+    a++;    
+    
+}
+printf("%d",counter);
+}
+
